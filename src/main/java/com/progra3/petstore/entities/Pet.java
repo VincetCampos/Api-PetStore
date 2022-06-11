@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -27,10 +28,12 @@ public class Pet {
 	private String name;
 	
 	@Column(name = "price")
+	@NotNull(message = "El precio no puede ir nulo")
 	@Min(value = 1)
 	private double price;
 	
 	@Column(name = "birth_day")
+	@NotNull(message = "Se necesita la fecha")
 	@Temporal(TemporalType.DATE)
 	private Date birthDay;
 	

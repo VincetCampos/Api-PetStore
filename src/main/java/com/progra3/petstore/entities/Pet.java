@@ -23,17 +23,17 @@ public class Pet {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "name_pet")
 	@NotBlank(message = "Se necesita el nombre de la mascota")
+	@Column(name = "name_pet")
 	private String name;
 	
-	@Column(name = "price")
 	@NotNull(message = "El precio no puede ir nulo")
 	@Min(value = 1)
+	@Column(name = "price")
 	private double price;
 	
-	@Column(name = "birth_day")
 	@NotNull(message = "Se necesita la fecha")
+	@Column(name = "birth_day")
 	@Temporal(TemporalType.DATE)
 	private Date birthDay;
 	

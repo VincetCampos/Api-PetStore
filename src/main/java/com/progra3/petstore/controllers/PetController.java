@@ -41,12 +41,14 @@ public class PetController {
 		return service.findById(id);
 	}
 	
+	//Validacion en creacion
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping
 	public Pet createPet(@Valid @RequestBody Pet pet) {
 		return service.createPet(pet);
 	}
 	
+	//Validacion en actualizar
 	@PutMapping("/{id}")
 	public Pet updatePet(@PathVariable Long id, @Valid @RequestBody Pet pet) {
 		return service.updatePet(id, pet);
